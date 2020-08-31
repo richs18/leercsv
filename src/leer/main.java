@@ -48,6 +48,7 @@ public class main {
 int chunks = (int) Math.floor(datos.size()/ chunk_size);
         System.out.println("este es el chunks"+chunks);
 int m=0;
+String nombre="proceso";
         for (int i = 0; i < chunks; i++) {
             ArrayList<String> dat = new ArrayList<>();
             for (int j = 0; j < chunk_size; j++) {
@@ -56,7 +57,7 @@ int m=0;
                 
                 System.out.println("estos son los datos de dat"+dat.get(j));
             }
-       insertDatos in = new insertDatos(co,dat);
+       insertDatos in = new insertDatos(co,dat,(nombre+i));
       
        Thread hilos = new Thread(in);
        pool.submit(hilos);

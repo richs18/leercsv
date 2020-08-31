@@ -31,7 +31,9 @@ public class insertDatos implements Runnable{
      String categoriaProducto;
      String storeId;
      String storeName;
+     String nombreProceso;
      Connection cc=null;
+     
 Statement stmnt=null;
 Statement st=null;
 ResultSet rs=null;
@@ -41,9 +43,10 @@ int idProd;
 ArrayList<String> datos;
 //en esta clase implemento runaable o el  extend thread o hilo  y en  el metodo
 // void run que se crea hay ejecuto el metodo insertarDdatos
-public insertDatos(Connection c,ArrayList<String> dato){
+public insertDatos(Connection c,ArrayList<String> dato,String nombreProceso){
    this.cc=c;
     this.datos=dato;
+    this.nombreProceso=nombreProceso;
     System.out.println("este es el arralist en el constructor"+datos.size());
     run();
 }
@@ -52,9 +55,12 @@ public insertDatos(Connection c,ArrayList<String> dato){
        // Connection cc=c;
         
          for (int i = 0; i < datos.size(); i++) {
+             
+             
          idProd=0;
          cateId=0;
          storID=0;
+         
         String palabra = datos.get(i);
         
              System.out.println("esta es la palabra completa  "+palabra);
@@ -166,9 +172,10 @@ public insertDatos(Connection c,ArrayList<String> dato){
     
     
     public void consultarIdcategoria(String nomCategoria){
+        
         System.out.println("este es el nombre de la categoria "+nomCategoria);
-       try
-{
+        
+       try{
 
 
 st=cc.createStatement();
@@ -243,6 +250,8 @@ System.out.println(ex);
 
     @Override
     public void run() {
+        
+        System.out.println("este es el nombre del proceso que se ejecuta *********************************************************************************  "+nombreProceso);
         insertarDdatos(datos);
        
         
