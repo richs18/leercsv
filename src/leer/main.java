@@ -20,12 +20,14 @@ public class main {
      * @param args the command line arguments
      */
     
-    private static final  int chunk_size =10;
+    private static final  int chunk_size =50;
     private static ExecutorService pool;
+    
+    
     public static void main(String[] args) {
         int cantidadhilos =50;
         pool = Executors.newFixedThreadPool(cantidadhilos);
-        // en esta clase crea la variabale static para el chunk y defino el tamaño
+        // en esta clase creo la variabale static para el chunk y defino el tamaño
         //tambien divido el arraylist con el tamano del chunk  con un for y le envio 
         //las partes del chunk al metodo insertardatos o ala clase 
        Leer le= new Leer();
