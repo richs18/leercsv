@@ -20,7 +20,7 @@ public class main {
      * @param args the command line arguments
      */
     
-    private static final  int chunk_size =50;
+    private static final  int chunk_size =100;
     private static ExecutorService pool;
     
     

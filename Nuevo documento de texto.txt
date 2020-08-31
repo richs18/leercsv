@@ -1,0 +1,26 @@
+si producto no existe entre
+	si categoria id no exite entre
+		inserta categoria id, categorianame
+		inserta productid,categoriaid,productname
+	else
+		(cateid es el dato consultado que ya existe en la bd)
+		inserta productid, cateid, productname
+
+	si storeid no existe 
+		inserte storeid, storename
+		inserte productid,storeid,productprice
+	else
+		(storID es el dato consultado que ya existe en la bd)
+		insert producid,storID,producprice
+
+else
+
+
+si idcategoria no existe 
+	no hay encontro nombre retorno 0
+	pero el id ya esta siendo utilizado 
+
+entonces actualice	
+
+seria hacer un update en el else de los if cateid y storid 
+y en las consultas no hacerlas por buscqueda de nombre si no por id 

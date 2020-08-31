@@ -52,7 +52,9 @@ public insertDatos(Connection c,ArrayList<String> dato){
        // Connection cc=c;
         
          for (int i = 0; i < datos.size(); i++) {
-         
+         idProd=0;
+         cateId=0;
+         storID=0;
         String palabra = datos.get(i);
         
              System.out.println("esta es la palabra completa  "+palabra);
@@ -77,8 +79,8 @@ public insertDatos(Connection c,ArrayList<String> dato){
          
          
          consultarId(id);
-        consultarIdcategoria(categoriaProducto);
-        consultarStoreId(storeName);
+        consultarIdcategoria(idCategoria);
+        consultarStoreId(storeId);
         
                 
          
@@ -167,11 +169,11 @@ public insertDatos(Connection c,ArrayList<String> dato){
         System.out.println("este es el nombre de la categoria "+nomCategoria);
        try
 {
-nomCategoria = "colada";
+
 
 st=cc.createStatement();
 ResultSet rs = st.executeQuery( "SELECT category_id "+ 
-        "FROM category where category_name ="+"'"+ nomCategoria +"'"+";" );
+        "FROM category where category_id ="+"'"+ nomCategoria +"'"+";" );
 
 //ResultSet rs = st.executeQuery( "SELECT store_id "+ 
 //        "FROM store where store_name ="+"'"+ nomStore +"'"+";" );
@@ -200,7 +202,7 @@ System.out.println(ex);
          try {
              st=cc.createStatement();
             ResultSet rs = st.executeQuery( "SELECT store_id "+
-       "FROM store where store_name ="+"'"+ Store_name +"'"+";" );
+       "FROM store where store_id ="+"'"+ Store_name +"'"+";" );
             
             while(rs.next()){
                  String idPro=rs.getString(1);
