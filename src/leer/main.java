@@ -32,7 +32,7 @@ public class main {
         //las partes del chunk al metodo insertardatos o ala clase 
        Leer le= new Leer();
        
-      ArrayList<String> datos = le.leerTxt("D:\\EAM\\8 semestre\\sistemas distribuidos\\ejecicio1\\datos.txt");
+      ArrayList<String> datos = le.leerTxt("C:\\Users\\RICHD18\\Documents\\NetBeansProjects\\leer/datos.txt");
 //      int block []= Arrays.copyOfRange(datos, chunk_size, chunk_size);
 //String[] datos = datoslista.toArray(new String[datoslista.size()]);
 
